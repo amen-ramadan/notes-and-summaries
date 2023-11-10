@@ -1,0 +1,305 @@
+git clone https://github.com/amen-ramadan/git_Course1.git
+// جلب نسخة من المستودع كامل على الغيت هب لاول مرة 
+
+git status 
+//الحالة 
+
+git add {* or file name}
+// اضافة الى الستيج
+
+git reset head {file name and i don't know accept *}
+// تقوم بتنزيل الملفات من على الستيج
+
+git commit -m "what you doing"
+// اضافة الملفات الى اللوكال ريبو
+
+git branch 
+// بجبلك جميع المسارات يلي باللوكال
+
+git remote -v 
+// بجبلك الريموت
+
+git push {remote name} {branch name}
+example :  git push origin master
+// اضافة الى الريبو 
+
+// how to add team members
+\\ اذا بدك تضيف اشخاص وتساوي تيم لازم الشخص يلي ساوا البروجيكت يعملك اضافة 
+\\ بتجي الاضافة لعندك على الايميل وبتعمل قبول الها وبصير البروجيكت بحسابك على الغيت هب
+\\ بتضيفو عن طريق الخيارات وتحت ال option مباشرة
+\\ بتلاقي خيار بقلك على المشاركين في هذا المشروع
+
+git pull {remote name}
+// بجيب الملفات من الريبو وبيدمجها عندك
+
+git config -l
+// بجبلك قائمة بالاعدادات المتاحة للتعديل 
+
+git help config 
+// بجبلك دورة التعديل
+
+git config --global user.name
+// بجبلك اسم اليوسر
+
+git config --global user.name "amenRamadan"
+// بتغير اسم اليوسر 
+
+\\ نفس الشي للايميل
+
+git config -l --show-origin 
+// بجبلك كل كونفيغ من وين جايبها 
+
+git config --global --unset user.name
+// بتشيل اليوسرنيم من الكونفيغ
+
+\\ كل شغلة يا بتكتب جمبها --global يا اما لا 
+
+git config --global --edit
+// بيفتحلك الكود تعدل عليه من جوا بطريقة اسهل وابسط
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+public key is very important 
+
+
+
+cat ~ // بجبلك محتوى اي ملف بدك ياه
+
+\\ الدرس وقت انشئت ال الببلك كي تبعي 
+
+λ ssh-keygen -t rsa -b 4096 -C "ramadanamen407@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\DELL/.ssh/id_rsa):
+Created directory 'C:\\Users\\DELL/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in C:\Users\DELL/.ssh/id_rsa
+Your public key has been saved in C:\Users\DELL/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:Bc5Vy/ZFQqvMJnpjRACBkEc5pGzRNCDPI2kI0ZsJicw ramadanamen407@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|B++O=oooo ....o .|
+|*Eoo*. o + . . + |
+|+oB= .  o o + . .|
+|.o+.     o + o . |
+|        S o = .  |
+|         o o     |
+|        . +      |
+|         o .     |
+|                 |
++----[SHA256]-----+
+
+C:\Users\DELL\Desktop\git and gethup\amentraning\git_Course1 (main -> origin)
+λ cat ~/.ssh/id_rsa.pub
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIXbwgf3+KXqqJe/c2f2f4gWB3xeQucS+jlMFIoDytbvMw0VFq9mRF5k9jyYQJnu4JNze9Hja3qfzg8deLiFfNW9XFixJH2RhZ8fnx7IhLw4rMaW++/fzXayjFd2H3dm6ERKoAvLvEf1ZEf5Doghb2nFmc/K9vCCkKPToz0MWw5lNnWrKh/HccLHAQ2YME0cP9LXikUORQnYUJMteB8kF1ugxJVKzFUKPlCXFpg6DRB5ayokcO20VMn3sUutkIQE+4kq4F0pSzTfprwr+m/d+QOAcWQMXxDdmN6NxVIcutNVvkhOkLXBtkr2iUOjJ8sngNM2oECMGvFfpx5d/0xAXLf8Cm8bQ8GvAOlrQY/le6n+9BIFNfR0yNQxbRx5PjQPPJrxh6Geggj2h6TvbF7LHhWJpsKESP3r8xzZvBKU7D4E+Tgdux/zKoIrtxjzD1+CmOon4Vb+rQmG8Flo+0FwB6LTTKzfpBNICqg50opGj8N0VSTPUOrwj4ejFai40ftdu3NQV2isNNYW/9v90dLNhNO6EoaF7MpGkAUnn0Y0teWyyUNkRK9EMtWu5EG/r3mkWdtgUQQX6Sr+o0S4+9SDFDRIFeaT2PCtecVJBKPiAZBUCuF/SsA3O4N/X9vCIQIwuR3hH3F7Uhe4UNEa4RbmE2Fkm8ocks30qJQg+HqieNjw== ramadanamen407@gmail.com
+
+
+
+\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\  الشرح  \\\\\\\\\\\\\\\\\\\\\\
+
+\\ هذا السطر قمت بتعريف الايميل
+ssh-keygen -t rsa -b 4096 -C "ramadanamen407@gmail.com"
+
+
+\\ بهدول الاسطر بيطلب منك الكي او المفتاح يعني انك تكتبلو اسم
+\\ وفيك تتركها فاضية 
+\\ بعد منها بيطلب منك كلمة سر ومالك مقيد بشي وبيطلب منك تاكيدها بالسطر يلي بعدو
+Generating public/private rsa key pair.
+Enter file in which to save the key (C:\Users\DELL/.ssh/id_rsa):
+Created directory 'C:\\Users\\DELL/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+
+
+\\ هون بقلك انو انشئها وبقلك بانو ملف انشئها
+Your identification has been saved in C:\Users\DELL/.ssh/id_rsa
+Your public key has been saved in C:\Users\DELL/.ssh/id_rsa.pub
+The key fingerprint is:
+SHA256:Bc5Vy/ZFQqvMJnpjRACBkEc5pGzRNCDPI2kI0ZsJicw ramadanamen407@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|B++O=oooo ....o .|
+|*Eoo*. o + . . + |
+|+oB= .  o o + . .|
+|.o+.     o + o . |
+|        S o = .  |
+|         o o     |
+|        . +      |
+|         o .     |
+|                 |
++----[SHA256]-----+
+
+
+
+\\ هوتن بتقو انت انو يجبلك محتوى الملف يلي انشئلك ياها فيه
+cat ~/.ssh/id_rsa.pub
+
+
+\\ هاد الامر بجبلك محوى اي ملف ولو كنت بمسار غير المسار يلي هو موجود فيه
+cat ~
+
+
+\\ هاد السكيور شيل يلي بتقدر تضيفو بالغيت هاب
+ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDIXbwgf3+KXqqJe/c2f2f4gWB3xeQucS+jlMFIoDytbvMw0VFq9mRF5k9jyYQJnu4JNze9Hja3qfzg8deLiFfNW9XFixJH2RhZ8fnx7IhLw4rMaW++/fzXayjFd2H3dm6ERKoAvLvEf1ZEf5Doghb2nFmc/K9vCCkKPToz0MWw5lNnWrKh/HccLHAQ2YME0cP9LXikUORQnYUJMteB8kF1ugxJVKzFUKPlCXFpg6DRB5ayokcO20VMn3sUutkIQE+4kq4F0pSzTfprwr+m/d+QOAcWQMXxDdmN6NxVIcutNVvkhOkLXBtkr2iUOjJ8sngNM2oECMGvFfpx5d/0xAXLf8Cm8bQ8GvAOlrQY/le6n+9BIFNfR0yNQxbRx5PjQPPJrxh6Geggj2h6TvbF7LHhWJpsKESP3r8xzZvBKU7D4E+Tgdux/zKoIrtxjzD1+CmOon4Vb+rQmG8Flo+0FwB6LTTKzfpBNICqg50opGj8N0VSTPUOrwj4ejFai40ftdu3NQV2isNNYW/9v90dLNhNO6EoaF7MpGkAUnn0Y0teWyyUNkRK9EMtWu5EG/r3mkWdtgUQQX6Sr+o0S4+9SDFDRIFeaT2PCtecVJBKPiAZBUCuF/SsA3O4N/X9vCIQIwuR3hH3F7Uhe4UNEa4RbmE2Fkm8ocks30qJQg+HqieNjw== ramadanamen407@gmail.com
+
+
+\\ هاد الكود لفحص الكي يلي ضفتها الى موقع ما 
+ssh -T git@github.com
+
+\\ حاليا انت ما بتحتاج الايميل وكلمة السر على هاد الجهاز لهاد الغيت هاب 
+
+
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+/////////////////////////////////////////////////////////////////////////////////////////
+
+
+git init 
+\\ انشاء ريبو محلي
+
+
+touch indix.html
+// امر انشاء ملف جديد
+
+
+git remote add origin {LINK}
+// اضافة المستودع البعيد عل المشروع الذي تم انشائه عن طريق الجهاز
+
+
+git push -u origin master 
+// ال u
+// بتدل على انك انت بتعمل سحب بعدين دفع منشان التيم يلي عم تشتغل معو تضلو عم تشتغلوو بتناسق 
+
+
+مصطلح
+alias
+\\ كتابة اختصارات تدل على الاوامر 
+\\ هو ما بحول الاوامر هو بس بيختصرها يعني فيك ما تستعمل الاختصار وتكتب الامر عادي رح يشتغل
+
+
+git config --global alias.st status
+// انشاء اختصار للامر الخاص بالحالة
+// بعد ال ايلياس بتكتب دوت والاختصر وبعدها مسافة والاختصار يلي اختصرتو
+
+
+git config --global alias.st
+\\ بجبلك الاختصار هاد هو اختصار عن  شو او شو بساوي بالضبط
+
+
+git config --global alias.cm "commit -m"
+\\ هي اذا بدك تكتب اختصار لامر ما  مكون من كلمتين
+
+
+git config --global --edit
+\\ رح يعطلعلك الايليس والاختصارات يلي اشتغلتها وتفتح بمحرر الاكواد فيك تدل فيها على كيفك
+
+
+git branch 
+\\ بورجيك البرانشات الموجودة عندك
+
+
+git branch scroll 
+\\ بانشئ برانش باسم سكرول
+
+
+git checkout scroll
+\\ لحتى تنتقل للبرانش وفيك تكتب نفس الامر بس بدال السكرول ماستر لحتى ترجع للاساسي
+
+
+git branch -d scroll
+\\ بتحذف البرانش
+
+
+
+-d    -D
+\\ الصغيرة ما بتحذف اذا في تعديلات
+\\ الكبيرة بتحذف حتى لو في تعديلات
+
+
+git checkout -b 'Dev-feature'
+\\ بانشئ البرانش وبروح عليه
+
+
+git marge Dev-feature
+\\ بتروح على الماستر وبتعمل ميرج للفرع الثاني ف بصيرو واحد
+
+
+git stash
+بتخفي الملفات من المجلد ومن الرفع والتعديل بس بضلو عندك
+
+
+\\ لما بستعمل الستاش لازم ضيف الملفات على الستيج بعدين على الستاش 
+
+
+git stash list
+
+
+git stash pop 
+\\ رح يجيبها من الصندوق لعندك
+
+
+\\\\\\ بقلب الدروس بيشرح طريقة اضافة اسماء للستاش وانك تجيب يلي بدك ياه منها
+\\\\\\ الدرس موجود ومكتوب عليه ستاش بارت 2
+
+
+git restore --staged * [جميع الملفات]
+git restore --staged <file name>
+\\ برجع الملفات من منطقة الستيج
+
+
+
+head 
+\\ بشاور على اخر كوميت معمول عندك
+
+
+git reset --hard <hash commet>
+\\ بتعطيه الكوميت يلي بدك ياه وبيحذفلك كلشي كوميتات رفعتها بعده
+
+
+git push origin master --force 
+\\ هاد الامر بتعمل تحديث من خلاله من بعد ما بتعطيه الامر يلي قبل هاد
+
+
+
+اعدادات ملف 
+.gitignore
+بتكتب جزاتو هيك
+
+*.log  بيتجاهل اي ملف امتداده هيك
+!vip.log  من عدا الملف هاد يلي هيك امتداده يعني رح يتجاهل الكل الا هاد
+/node_medole رح يتجاهل المجلد كلو
+
+-force or -f مع اسم الملف بيرفعها حتى لو عاملو اغنور
+
+
+
+git tag
+\\ بجبلك التاغات الموجودة عندك
+
+
+git tag v1.0
+git push origin v1.0
+\\ بتعمل متل اصدارات للمشروع تبعك ومن خلالها فيك تحمل اي اصدار بشكل مستقل
+
+
+git tag -l
+git tag -l "v1.*"
+// بجبلك الاصدارات الخاصة بالاصدار الاول
+
+
+
+
+
+
+
+
+
+

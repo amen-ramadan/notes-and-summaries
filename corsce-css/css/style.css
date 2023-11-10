@@ -1,0 +1,301 @@
+/* 
+
+the grid
+----------------------------------------------------------------------------------------
+parent
+
+- display: grid  |  inline grid 
+- grid-template-colums => {numbers of columns in} => [px, %, auto, fraction, repeat(), mix]
+- grid-template-rows => {numbers of columns in} => [px, %, auto, fraction, repeat(), mix]
+- gap: [row gap] [column gap]
+- grid-template-areas: "بتحدد كم عامود يوجد داخل هذا السطر
+                        أول سطر : logo logo nav nav nav nav nav nav nav nav 
+                        ثاني سطر : cont cont cont cont cont cont cont sid sid sid
+                        ثالث سطر : foot foot foot foot foot foot foot foot foot foot
+                        لحتلى تخلي عامود فاضي بتكتب دوت مكان الكلمة {.} بدون اقواس بتكتبها 
+
+- grid-aria: {اسم ال aria الموجودة في الخاصية grid-template-area  وتوضع داخل العنصر الذي تريد اعطائه هذه المناطق }
+
+
+child 
+
+
+grid-column: <بتحدد كم عامود يأخذ العنصر > <إذا كان عدد الأعمدة 6 فرضا>
+            1 / 7 يعني ياخذهن كلن وما بيحسب ال 6 سوا
+            span 4 <كمان بتقدر تكتب بهي الطريقة لحتى يقول له خذ 4 أعمدة بدون ما تقبو وين يوقف ووين ينتهي >
+            2 / span 3 <يعني خليه يبدأ من الثاني ويأخذ 3 عناصر او أعمدة يلي هو>
+            <إذا عطيت هذه الخاصية عدد اعمدة أكبر من الموجودة فعليا فهو سوف يقوم بتخريب ال grid واضافة عمود لها 
+            وهذا الكلام ينطبق على طريقة الأعطاء الأولى 
+            أما اذا حددت طريقة أخذ الأعمدة عن طريق ال span أي كما هي الطريقة 
+            الثانية والثالثة فهو لن يخرب التصميم بل سيأخذ من الأمدة في السطر الثانس >
+
+grid-row: <نفس الخرا يلي فوق تماما>
+
+
+grid-row-start: {أي صف بيبدأ}
+grid-column-start: <أي عاود بيبدأ>
+grid-row-end: {أي صف بينتهي أخد المساحة}
+grid-column-end: {أي عامود بينتهي }
+
+--------    لا يتم أحتساب الرقم المعطى بل قبله برقم 
+            هذه بالنسبة للقيم المعطاة ييخواص التي تخص ال end  فقط  
+            أما ال start فهو يحسب قيمة الرقم المعطى له---------
+
+- grid-aria: <تأخذ جميع القيم أعلاه بالترتيب المذكور>
+            <فيك تعطيه التسمية تبع الأعمدة يلي حطيتها بالخاصية grid-temblet-area>
+            { الخاصية auto-fill تجعل عدد العناصر يزيد وينقص حسب حجم لاشاشة وحسب الحجم المطلوب للعامود}
+            <لدينا الخاصية {minmax()} تأخذ قيمتين الأصغر والأكبر >
+
+
+            -----------------------------------------------------------------------------------------------------
+
+
+
+
+animation-name 
+animation-duration : وقت الجركة
+animation-iteration-count: نوع الحركة
+animation-direction:
+animation-delay: متى تبدأ الحركة وتقبل قيمة سلبية تقتطع من وقت بداية الحركة 
+animation-fill-mode: هل سيأخد تنسيقات اخر فريم او اول فريم وهو يأخذ القيمة both أي أن أيا كان اتجاه الحركة سوف يأخذ القيمة الأخيرة 
+animation-play-atate: ماهي حالة الحركة هي هي تتحرك ام واقفة
+
+
+
+******************************************************************************************************/
+
+
+/* 
+التحدي الخاص بحرف ل e  وال L */
+
+
+
+
+/* 
+
+* {
+    padding: 0;
+    margin: 0;
+}
+
+.parent {
+    width: 800px;
+    height: 450px;
+    background-color: #eee;
+    padding: 25px;
+    margin: 10px auto;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(10, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+}
+
+.parent div {
+    background-color: #383838;
+}
+
+.parent .one {
+    grid-row: 1 / span 3;
+}
+
+.parent .two {
+    grid-column: 2 / span 3;
+    height: 70px;
+    align-self: flex-start;
+}
+
+.parent .three {
+    grid-column: 2 / span 3;
+    height: 70px;
+    align-self: center;
+}
+
+.parent .four {
+    grid-column: 2 / span 3;
+    height: 70px;
+    align-self: flex-end;
+}
+
+.parent .five {
+    grid-column: 6 / span 1;
+    grid-row: 1 / span 3;
+}
+
+.parent .six {
+    grid-column: 7 / span 3;
+    height: 70px;
+    align-self: flex-end;
+}
+
+.parent::after {
+    content: '';
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    background-color: #ffb104;
+    right: 110px;
+    bottom: 37px;
+    animation: my-first-move 3s linear both;
+    opacity: 0;
+}
+
+.parent::before {
+    content: '';
+    height: 45px;
+    width: 45px;
+    position: absolute;
+    background-color: #ffb104;
+    left: 285px;
+    top: 37px;
+    animation: my-second-move 3s linear 3s;
+}
+
+@keyframes my-first-move {
+    0% { opacity: 0; right: 110px;}
+
+    30%{
+        opacity: 1; right: 110px;
+    }
+
+    50% { right: 361px; bottom: 37px; opacity: 1; }
+
+    77% { opacity: 1; right: 361px; bottom: 417px; }
+
+    100% { opacity: 0; right: 361px; bottom: 417px; }
+}
+
+@keyframes my-second-move {
+    0% { left: 285px; top: 37px; }
+
+    10% { left: 44px; top: 37px; }
+
+    20% { left: 44px; top: 225px; }
+    
+    30% { left: 285px; top: 226px; }
+    
+    40% { left: 44px; top: 225px; }
+
+    50% { left: 44px;top: 417px; }
+
+    60% { left: 285px; top: 417px; }
+
+    70% { left: 44px; top: 417px; }
+
+    85% { left: 44px; top: 37px; }
+
+    100% { left: 285px; top: 37px; }
+} */
+
+
+/*****************************************************************************************/
+
+/* selectors */
+
+
+/* 
+
+- *
+- element
+- element outher element => div p
+- .parent .child
+- .class1.class2 
+- .class-name div , .class-name p
+- element.class-name
+- element > .child => direct child
+=============
+== part 2 == 
+=============
+- element + outher element => [div + p] next slectors ليس ابنه لكنه بعده بالترتيب
+- element ~ outher element => [div ~ p] جميع الباراغراف الأشقاء لل ديف
+- [attribute]
+- element[attribite] div[title]
+- [attribute= value]
+- element [attribute= value] div[title="S01"] => input[type= "search"]
+- [attribute~=value] => contains A Word يحتوي على كلمة منفصلة ولكن لن تنسق اذا كانت هذه الكلمة جزء من كلمة أخرى هكذا سوف تعتبر نص 
+- [attribute*=value] => contains A String
+- [attribute^=value] => start With A string
+==============
+== part 3 ==
+==============
+- p:first-child  => يحمل شرطين
+- :last-child
+- :first-of-type  
+- :last-of-type  
+- :only-of-type
+=============
+== part 4 ==
+=============
+- :not(selectors)
+- :nth-child(n) \ (even) \ (odd) => https: nthmaster
+- :nth-last-child  عكس يلي فوق تماما
+- :nth-of-type(n) \ (even) \ (odd) 
+- :nth-last-of-type  عكس يلي فوق تماما
+============
+== part 5 ==
+============
+- :root
+- :checked => input[type="checkbox"]:checked + label
+- empty => عنصر فارغ لا يتحوي على أي شيْ => قد تحتاجه في تنسيق خلايا جدول فارغة لا تحتوي على بيانات
+- :disabled العنصر له هذه الخاصية
+- :focus عند التركيز على حقل ما 
+- :required 
+- ::placeholderb عن طريقها بتخصص الكلام الموجود بالبلايس هولدير 
+- ::selection عندما يختار الكلام او يحدده
+*/
+
+
+.assign-one {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    font-family: Arial, Helvetica, sans-serif;
+    
+}
+
+.assign-one div {
+    background-color: #eee;
+    text-align: center;
+    width: calc(34% - 20px);
+    margin-bottom: 10px;
+}
+
+h3 {
+    color: blue;
+    font-size: large;
+    font-weight: bold;
+}
+
+p{
+    color: rgb(60, 55, 55) ;
+    font-size: 14px;
+}
+.assign-one div:first-child {
+    width: calc(100% - 20px);
+}
+
+@media (max-width: 991px) {
+    .assign-one div {
+        width: calc(50% - 20px);
+        margin-bottom: 15px
+    }
+    h3 {
+        color: red;
+    }
+    .assign-one div:first-child {
+        width: calc(100% - 20px);
+    }
+    .assign-one div:last-child {
+        width: calc(100% - 20px);
+    }
+}
+
+@media (max-width: 576px) {
+    .assign-one div {
+        width: calc(100% - 10px);
+        margin-bottom: 10px
+    }
+    h3 {
+        color: black;
+    }
+    
+}

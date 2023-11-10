@@ -1,0 +1,4 @@
+- كيف يمكنني رفع موقع مبني ب webpack على github
+
+
+https://academy.hsoub.com/questions/21928-%D9%83%D9%8A%D9%81-%D9%8A%D9%85%D9%83%D9%86-%D8%B1%D9%81%D8%B9-%D9%85%D9%88%D9%82%D8%B9-%D9%85%D8%A8%D9%86%D9%8A-%D8%A8%D9%80-webpack-%D8%B9%D9%84%D9%89-github/

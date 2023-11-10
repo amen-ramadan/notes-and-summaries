@@ -1,0 +1,14 @@
+حذف ملفات البناء القديمة .
+
+- ربما المشكلة لديك في ملف dist الذي يحوي نسخة البناء من المشروع، قم بحذفه وإعادة تشغيل المشروع ثم حذف الكاش من المتصفح، وأيضًا أرجو منك تغيير التالي في ملف webpack.config.js
+
+  output: {
+    path: path.join(__dirname, '/dist'),
+    publicPath: '/',
+    filename: 'main.js',
+    assetModuleFilename: 'images/[name][ext]',
+    clean: true,
+  },
+لاحظ أن تم إضافة clean: true ضمن خيارات الإخراج output، وتعني حذف ملفات البناء القديمة، قبل تنفيذ عملية بناء جديدة عند تشغيل الأمر npm run build.
+
+بالتوفيق إن شاء الله.

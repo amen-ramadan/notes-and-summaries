@@ -1,0 +1,39 @@
+تضارب التحدثيات .
+
+- مرحبا .. 
+
+قامت المدربة باخبارنا ان نقوم باستبدال النسخ الحديثة المثبتة لدينا من اصدارات webpack و jquery والخ.. الى تلك التي تستخدمها هي في المشروع حتى لا يحدث لدينا تضارب, قمت باستبدالها
+
+لكن ظهرت لي هذه رسالة ,
+
+وارجو التشييك على تضميني لمكتبة بوتستراب هل صحيح ام لا,
+
+وشكرا .
+
+----------------------------------------------------------------------------------------------
+
+- مرحباً امين،
+
+اكتب الامر التالي في موجه الاوامر لتحديث الحزم :
+
+npm update --legacy-peer-deps
+ثم قم بتعديل اعدادات الـ dev server إلى الشكل التالي من ملف الـ webpack.json.js :
+
+	devServer: {
+		contentBase: path.resolve(__dirname, 'dist'),
+		port: 65535,
+		writeToDisk: true,
+		hot: false,
+	},
+وعدل ملف الـ index.js إلى الشكل التالي :
+
+import '@laylazi/bootstrap-rtl/dist/css/bootstrap-rtl.min.css';
+import 'jquery/dist/jquery.min';
+import 'popper.js/dist/popper.min';
+import 'bootstrap/dist/js/bootstrap.min.js';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './css/style.css';
+import 'bootstrap';
+حيث غيرنا ترتيب استدعاء العناصر.
+
+شكراً لك.
